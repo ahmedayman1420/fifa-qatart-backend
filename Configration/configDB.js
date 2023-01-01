@@ -12,7 +12,10 @@ const connectOptions = {
 };
 const Connection = async () => {
   await mongoose
-    .connect(`${process.env.CONNECTION_STRING}`, connectOptions)
+    .connect(
+      `mongodb+srv://Ahmed:wzszliMs6RhEeJn8@cluster0.zkrlfzw.mongodb.net/Fifa-Qatar-2022?retryWrites=true&w=majority`,
+      connectOptions
+    )
     .then((result) => {
       console.log("Node Connected With Mongo BD");
     })
