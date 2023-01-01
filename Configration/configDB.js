@@ -5,9 +5,14 @@ const mongoose = require("mongoose");
 /*
 //==// connection function used to connection node.js project with mongodb 
 */
+
+const connectOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
 const Connection = async () => {
   await mongoose
-    .connect(`${process.env.CONNECTION_STRING}`, {})
+    .connect(`${process.env.CONNECTION_STRING}`, connectOptions)
     .then((result) => {
       console.log("Node Connected With Mongo BD");
     })
